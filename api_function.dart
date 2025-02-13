@@ -141,6 +141,8 @@ class ApiFunction {
     }
   }
 
+/// refreshTokenApi(optional)
+  
   static Future<void> refreshTokenApi() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
