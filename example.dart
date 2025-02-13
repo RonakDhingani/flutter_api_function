@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import '../api_function.dart';
+import 'api_function.dart';
 
 
 Future<void> getHolidays() async {
