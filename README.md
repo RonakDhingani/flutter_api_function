@@ -1,5 +1,3 @@
-google-site-verification: google0ef60f48bd284225.html
-
 # API Function for Flutter 🚀
 
 ## 📌 Overview
