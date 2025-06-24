@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:dio/dio.dart' as dio;
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../common_widget/api_url.dart';
-import '../common_widget/global_value.dart';
+import '../api_url.dart';
+import '../global_value.dart';
 
 class ApiFunction {
   static Future<void> apiRequest({
