@@ -15,7 +15,7 @@ class NetworkManager {
     if (!hasInternet) {
       if (!_isDialogShowing) {
         _isDialogShowing = true;
-        await Utility.networkConformationDialog();
+        // here you show popup or anything what you want
         _isDialogShowing = false;
       }
       return false;
