@@ -21,9 +21,12 @@ class ApiFunction {
     int retries = 3,
     int currentRetry = 0,
   }) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? accessToken = prefs.getString("accessToken");
+    bool hasNetwork = await NetworkManager.checkNetworkAndShowPopup();
 
+    if (!hasNetwork) {
+      log("No internet connection. API call stopped for URL => $url");
+      return;
+    }
     try {
       log("API Request Initiated: URL => $url, Method => $method");
       if (data != null) log("Request Data: ${data.toString()}");
@@ -141,8 +144,6 @@ class ApiFunction {
     }
   }
 
-/// refreshTokenApi(optional)
-  
   static Future<void> refreshTokenApi() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
@@ -159,7 +160,7 @@ class ApiFunction {
         options: dio.Options(
           headers: {
             "Content-Type":
-            'multipart/form-data; boundary=<calculated when request is sent>',
+                'multipart/form-data; boundary=<calculated when request is sent>',
           },
           validateStatus: (status) => true,
         ),
@@ -183,5 +184,6 @@ class ApiFunction {
     }
   }
 }
+
 
 
