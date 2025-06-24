@@ -184,6 +184,3 @@ class ApiFunction {
     }
   }
 }
-
-
-
